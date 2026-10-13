@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Startup Funding Opportunity Directory</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background-color: #f8fafc;
+      color: #0f172a;
+      line-height: 1.5;
+    }
+
+    /* Top Navigation */
+    .navbar {
+      background-color: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-icon {
+      width: 28px;
+      height: 28px;
+      background-color: #0f172a;
+      color: #ffffff;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .brand-text h1 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    .brand-text p {
+      font-size: 0.75rem;
+      color: #64748b;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-assistant {
+      background-color: #0f172a;
+      color: #ffffff;
+      border: 1px solid #0f172a;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background-color 0.15s ease;
+    }
+
+    .btn-assistant:hover {
+      background-color: #1e293b;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1080px;
+      margin: 36px auto;
+      padding: 0 20px;
+    }
+
+    .header-section {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    .header-section h2 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+
+    .header-section p {
+      font-size: 0.9rem;
+      color: #475569;
+      max-width: 720px;
+    }
+
+    .meta-badges {
+      display: flex;
+      gap: 8px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #334155;
+    }
+
+    .status-online {
+      width: 6px;
+      height: 6px;
+      background: #10b981;
+      border-radius: 50%;
+    }
+
+    /* Grid Section */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: border-color 0.15s ease;
+    }
+
+    .card:hover {
+      border-color: #cbd5e1;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #0f172a;
+      margin-bottom: 6px;
+    }
+
+    .card p {
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-bottom: 16px;
+      line-height: 1.45;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 14px;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .card-meta {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #475569;
+    }
+
+    .card-btn {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      color: #0f172a;
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .card-btn:hover {
+      background: #0f172a;
+      color: #ffffff;
+      border-color: #0f172a;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <nav class="navbar">
+    <div class="brand">
+      <div class="brand-icon">₹</div>
+      <div class="brand-text">
+        <h1>Funding Scheme Directory</h1>
+        <p>Document-backed Startup Grants, Subsidies & Loans</p>
+      </div>
+    </div>
+    <div class="nav-actions">
+      <button class="btn-assistant" onclick="window.FundingChatbot && window.FundingChatbot.open()">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+        Open Chatbot
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <main class="container">
+    <section class="header-section">
+      <h2>Verified Startup Funding Knowledge Base</h2>
+      <p>
+        Browse Indian startup funding opportunities categorized across 15+ industry sectors and state governments. Use the bottom-right assistant to query eligibility, loan caps, and grant terms instantly.
+      </p>
+      <div class="meta-badges">
+        <span class="badge"><span class="status-online"></span> Assistant Ready</span>
+        <span class="badge">Document: Funding Opportunity - Industry Sector Wise</span>
+        <span class="badge">15+ Industry Sectors Covered</span>
+        <span class="badge">State-wise & SIDBI Schemes</span>
+      </div>
+    </section>
+
+    <!-- Sectors & Programs Grid -->
+    <section class="grid">
+      <div class="card">
+        <div>
+          <h3>Sector Schemes</h3>
+          <p>Explore opportunities in Agri-Tech, Green Energy, Healthcare, AI/IoT, Semiconductors, and Food Processing.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-meta">Grants up to ₹50 L+</span>
+          <button class="card-btn" onclick="askTopic('What are the funding schemes for Agri-Tech startups?')">Ask Assistant</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div>
+          <h3>State-Specific Schemes</h3>
+          <p>Find schemes dedicated to startups based in Gujarat, Tamil Nadu, Karnataka, Telangana, Maharashtra, UP, and more.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-meta">State Incentives</span>
+          <button class="card-btn" onclick="askTopic('What funding schemes are available in Gujarat?')">Ask Assistant</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div>
+          <h3>Special Category Support</h3>
+          <p>Schemes for SC/ST/OBC entrepreneurs, young founders, women-led startups, and NGO programs.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-meta">Subsidized Loans</span>
+          <button class="card-btn" onclick="askTopic('What loan schemes are available for SC/ST entrepreneurs?')">Ask Assistant</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function askTopic(query) {
+      if (window.FundingChatbot) {
+        window.FundingChatbot.open();
+        // Give widget a moment to mount and focus
+        setTimeout(() => {
+          const shadowHost = document.getElementById("funding-chatbot-host");
+          if (shadowHost && shadowHost.shadowRoot) {
+            const input = shadowHost.shadowRoot.getElementById("fcb-input");
+            const form = shadowHost.shadowRoot.getElementById("fcb-form");
+            if (input && form) {
+              input.value = query;
+              form.dispatchEvent(new Event("submit", { cancelable: true }));
+            }
+          }
+        }, 150);
+      }
+    }
+  </script>
+
+  <!-- Embed Self-contained Floating Chat Widget -->
+  <script src="/widget.js"></script>
+</body>
+</html>
